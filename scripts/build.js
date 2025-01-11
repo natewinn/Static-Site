@@ -10,6 +10,11 @@ async function build() {
     // Copy assets
     await fs.copy('src/assets', 'dist/assets');
     
+    // Copy index.html
+    if (await fs.pathExists('src/index.html')) {
+        await fs.copy('src/index.html', 'dist/index.html');
+    }
+    
     // Build pages
     const pagesDir = 'src/content/pages';
     const pages = await fs.readdir(pagesDir);
@@ -20,10 +25,8 @@ async function build() {
             const { attributes, body } = matter(content);
             const html = marked(body);
             
-            // Get template
+            // Use template for all markdown pages
             const template = await fs.readFile('src/templates/page.html', 'utf-8');
-            
-            // Replace template variables
             const finalHtml = template
                 .replace('{{title}}', attributes.title || 'Page')
                 .replace('{{content}}', html);
@@ -32,9 +35,6 @@ async function build() {
             await fs.writeFile(outputPath, finalHtml);
         }
     }
-    
-    // Build blog posts (similar process)
-    // ... (we'll add this later)
 }
 
 build().catch(console.error); 
