@@ -11,6 +11,20 @@ body {
     color: #0A1F44;
 }
 
+/* Common page layout styles */
+.page-content,
+.blog-post,
+.blog-index {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+}
+
+/* Container for all main content */
+main {
+    min-height: calc(100vh - 200px); /* Ensures footer stays at bottom */
+}
+
 /* Navigation */
 nav {
     display: flex;
@@ -125,5 +139,224 @@ h1 {
 
     .stats h2 {
         font-size: 2rem;
+    }
+}
+
+/* Blog Styles */
+.blog-post {
+    padding: 4rem 1rem;
+}
+
+.post-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.post-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.post-meta {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.post-meta time {
+    margin-right: 1rem;
+}
+
+.post-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.post-content h2 {
+    margin: 2rem 0 1rem;
+}
+
+.post-content p {
+    margin-bottom: 1.5rem;
+}
+
+/* Header Styles */
+header {
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+    background: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #0A1F44;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #0066FF;
+}
+
+/* Footer Styles */
+.site-footer {
+    margin-top: 4rem;
+    padding: 2rem 0;
+    border-top: 1px solid #eee;
+    background: white;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-right p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+}
+
+/* ConvertKit Form Styles */
+.convertkit-form-wrapper {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.form-header {
+    margin-bottom: 1.5rem;
+}
+
+.form-header h3 {
+    font-size: 1.5rem;
+    color: #0A1F44;
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    color: #64748b;
+}
+
+.formkit-field {
+    margin-bottom: 1rem;
+}
+
+.formkit-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.formkit-input:focus {
+    outline: none;
+    border-color: #0066FF;
+}
+
+.formkit-submit {
+    background: #0066FF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.formkit-submit:hover {
+    background: #0052cc;
+}
+
+.formkit-guarantee {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+/* Blog Index Styles */
+.blog-index h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.blog-preview {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.blog-preview:last-child {
+    border-bottom: none;
+}
+
+.blog-preview h2 {
+    margin-bottom: 1rem;
+}
+
+.blog-preview h2 a {
+    color: #0A1F44;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.blog-preview h2 a:hover {
+    color: #0066FF;
+}
+
+/* Update the templates to use these classes */
+@media (max-width: 768px) {
+    .page-content,
+    .blog-post,
+    .blog-index {
+        padding: 2rem 1rem;
     }
 } 
