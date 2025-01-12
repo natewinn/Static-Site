@@ -3,6 +3,15 @@ const path = require('path');
 const { marked } = require('marked');
 const matter = require('front-matter');
 
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+}
+
 async function build() {
     // Load templates
     const headerTemplate = await fs.readFile('src/templates/partials/header.html', 'utf-8');
@@ -72,15 +81,15 @@ async function build() {
             
             blogPosts.push({
                 title: attributes.title,
-                date: attributes.date,
+                date: formatDate(attributes.date),
                 author: attributes.author,
                 slug: post.replace('.md', ''),
                 excerpt: body.split('\n')[0]
             });
             
             const finalHtml = applyTemplate(blogTemplate, {
-                title: `${attributes.title} | Blog`,
-                date: attributes.date,
+                title: attributes.title,
+                date: formatDate(attributes.date),
                 author: attributes.author,
                 content: html
             });

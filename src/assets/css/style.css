@@ -35,10 +35,6 @@ nav {
     margin: 0 auto;
 }
 
-.logo img {
-    height: 40px;
-}
-
 .nav-links a {
     text-decoration: none;
     color: #0A1F44;
@@ -91,22 +87,6 @@ h1 {
     font-size: 1.5rem;
     color: #0A1F44;
     margin-bottom: 3rem;
-}
-
-.cta-button {
-    display: inline-block;
-    background: #0A1F44;
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1.1rem;
-    transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-    background: #162B56;
 }
 
 /* Stats Section */
@@ -359,4 +339,19 @@ nav {
     .blog-index {
         padding: 2rem 1rem;
     }
+}
+
+/* Logo styles */
+.logo-emoji {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+/* Footer logo */
+.footer-logo .logo-emoji {
+    font-size: 1.5rem;
 } 
